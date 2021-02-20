@@ -1,5 +1,8 @@
 package edu.pingpong.main;
 
+import edu.pingpong.domain.item.Item;
+import edu.pingpong.domain.item.Sneaker;
+
 /**
  * StockX nació en Detroit, y allí siguen haciendo
  * las cosas a la manera tradicional,
