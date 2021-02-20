@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Asks implements Criteria {
-    private List<Offer> asksList = new ArrayList<>();
 
     public Asks() {
 
@@ -17,8 +16,9 @@ public class Asks implements Criteria {
 
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
-        this.asksList = sneaker.offers().stream().filter(o -> o instanceof Ask).filter(o -> o != null).
+        List<Offer> asksList = new ArrayList<>();
+        asksList = sneaker.offers().stream().filter(o -> o instanceof Ask).filter(o -> o != null).
                 collect(Collectors.toList());
-        return this.asksList;
+        return asksList;
     }
 }

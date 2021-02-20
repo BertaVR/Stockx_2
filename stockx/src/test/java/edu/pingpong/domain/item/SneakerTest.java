@@ -12,12 +12,13 @@ import static org.junit.Assert.assertEquals;
 public class SneakerTest {
 
     Sneaker sneaker = new Sneaker("Jordan", "hola");
-    List<Offer> offers = new ArrayList<Offer>();
 
 
 
     @Before
     public void setUpSneaker(){
+        List<Offer> offers = new ArrayList<Offer>();
+
         Sneaker sneaker = new Sneaker("Jordan", "hola");
         sneaker.getSale();
     }

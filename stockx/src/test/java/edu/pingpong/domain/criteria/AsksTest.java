@@ -1,22 +1,24 @@
 package edu.pingpong.domain.criteria;
 
-import edu.pingpong.domain.item.*;
+import edu.pingpong.domain.item.Ask;
+import edu.pingpong.domain.item.Bid;
+import edu.pingpong.domain.item.Offer;
+import edu.pingpong.domain.item.Sneaker;
 import org.junit.Before;
 import org.junit.Test;
 
-
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
-public class BidsTest {
+public class AsksTest {
     Sneaker sneaker;
 
-    Bids bids = new Bids();
-
+    Asks asks = new Asks();
 
 
     @Before
 
-    public void setUpSneakers(){
+    public void setUpSneakers() {
         //Añado ofertas bid a sneaker
         this.sneaker = new Sneaker("Hola", "Adios");
 
@@ -39,19 +41,20 @@ public class BidsTest {
 
     @Test
 
-    public void filtroBidsTest(){
-        assertFalse(bids.checkCriteria(this.sneaker).isEmpty());
-        for (Offer offer : bids.checkCriteria(this.sneaker)){
+    public void filtroBidsTest() {
+        assertFalse(asks.checkCriteria(this.sneaker).isEmpty());
+        for (Offer offer : asks.checkCriteria(this.sneaker)) {
             assertNotNull(offer);
         }
-        for (Offer offer : bids.checkCriteria(this.sneaker)){
-            assertTrue(offer instanceof Bid);
+        for (Offer offer : asks.checkCriteria(this.sneaker)) {
+            assertNotNull(offer);
         }
-        for (Offer offer : bids.checkCriteria(this.sneaker)){
-            assertFalse(offer instanceof Ask);
+        for (Offer offer : asks.checkCriteria(this.sneaker)) {
+            assertTrue(offer instanceof Ask);
+        }
+        for (Offer offer : asks.checkCriteria(this.sneaker)) {
+            assertFalse(offer instanceof Bid);
         }
 
     }
-
-
 }

@@ -9,4 +9,5 @@ public interface Criteria {
 
     List<Offer> checkCriteria(Item item);
 
+
 }

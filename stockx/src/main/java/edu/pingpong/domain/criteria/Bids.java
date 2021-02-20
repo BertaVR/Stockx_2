@@ -9,15 +9,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Bids implements Criteria{
-   private List<Offer> bidsList = new ArrayList<>();
+
+    private List<Offer> bidsList = new ArrayList<>();
+
     public Bids(){
 
     }
 
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
-        this.bidsList = sneaker.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).
+        List<Offer> bidsList = sneaker.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).
                 collect(Collectors.toList());
-        return this.bidsList;
+        return bidsList;
     }
 }
