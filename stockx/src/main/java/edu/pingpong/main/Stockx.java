@@ -1,5 +1,7 @@
 package edu.pingpong.main;
 
+import edu.pingpong.domain.criteria.Bids;
+import edu.pingpong.domain.criteria.Criteria;
 import edu.pingpong.domain.item.Bid;
 import edu.pingpong.domain.item.Item;
 import edu.pingpong.domain.item.Sneaker;
@@ -69,7 +71,7 @@ public class Stockx {
          * solo las bids de entre las
          * offers de la zapatilla.
          */
-/*
+
         Criteria bids = new Bids();
         System.out.println("\n\t\t All BIDS");
         bids.checkCriteria(sneaker).forEach(System.out::print);
