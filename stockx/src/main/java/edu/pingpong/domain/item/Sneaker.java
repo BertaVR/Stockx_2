@@ -54,7 +54,7 @@ public class Sneaker implements Item {
 
     @Override
     public List<Offer> offers() {
-        return this.offers();
+        return this.offers;
     }
 
     @Override

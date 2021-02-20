@@ -1,5 +1,6 @@
 package edu.pingpong.main;
 
+import edu.pingpong.domain.item.Bid;
 import edu.pingpong.domain.item.Item;
 import edu.pingpong.domain.item.Sneaker;
 

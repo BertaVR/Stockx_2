@@ -10,8 +10,7 @@ public class BidTest {
 
     @Test
     public void toStringTest() {
-        assertEquals("Bid: 20"  + '\n' +
-                        "Size: Hola" ,
+        assertEquals("\n\t\t" + "Hola"+ "\t\t" + 20 ,
                 bid.toString());
     }
 }
