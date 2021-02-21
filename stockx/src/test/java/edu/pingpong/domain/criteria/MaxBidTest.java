@@ -44,7 +44,7 @@ public class MaxBidTest {
     }
 
     @Test // TENGO QUE TESTEAR QUE NO ENTREN VALORES NULOS, LA VERDAD ES QUE AHORA MISMO NO SÉ CÓMO HACERLO
-    public void minTest() {
+    public void maxBidTest() {
         for (Offer offer : maxBid.checkCriteria(this.sneaker)) {
             assertNotNull(offer);
             assertTrue(offer instanceof Bid);

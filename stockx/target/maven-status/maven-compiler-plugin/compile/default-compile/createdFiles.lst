@@ -7,6 +7,7 @@ edu\pingpong\domain\criteria\LastSale.class
 edu\pingpong\domain\criteria\MinAsk.class
 edu\pingpong\domain\criteria\Asks.class
 edu\pingpong\main\Stockx.class
+edu\pingpong\domain\criteria\Size.class
 edu\pingpong\domain\item\Offer.class
 edu\pingpong\domain\criteria\Min.class
 edu\pingpong\domain\item\Sale.class
