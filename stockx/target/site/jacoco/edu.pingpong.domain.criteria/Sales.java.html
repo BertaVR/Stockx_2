@@ -14,9 +14,9 @@ public class Sales implements Criteria{
 <span class="fc" id="L14">    }</span>
 
     @Override
-    public List&lt;Offer&gt; checkCriteria(Item sneaker) {
+    public List&lt;Offer&gt; checkCriteria(Item item) {
 <span class="fc" id="L18">        List&lt;Offer&gt; salesList = new ArrayList&lt;&gt;();</span>
-<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        salesList = sneaker.offers().stream().filter(o -&gt; o instanceof Sale).filter(o -&gt; o != null).</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        salesList = item.offers().stream().filter(o -&gt; o instanceof Sale).filter(o -&gt; o != null).</span>
 <span class="fc" id="L20">                collect(Collectors.toList());</span>
 <span class="fc" id="L21">        return salesList;</span>
     }

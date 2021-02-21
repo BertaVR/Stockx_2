@@ -15,9 +15,9 @@ public class Asks implements Criteria {
 <span class="fc" id="L15">    }</span>
 
     @Override
-    public List&lt;Offer&gt; checkCriteria(Item sneaker) {
+    public List&lt;Offer&gt; checkCriteria(Item item) {
 <span class="fc" id="L19">        List&lt;Offer&gt; asksList = new ArrayList&lt;&gt;();</span>
-<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        asksList = sneaker.offers().stream().filter(o -&gt; o instanceof Ask).filter(o -&gt; o != null).</span>
+<span class="pc bpc" id="L20" title="1 of 2 branches missed.">        asksList = item.offers().stream().filter(o -&gt; o instanceof Ask).filter(o -&gt; o != null).</span>
 <span class="fc" id="L21">                collect(Collectors.toList());</span>
 <span class="fc" id="L22">        return asksList;</span>
     }

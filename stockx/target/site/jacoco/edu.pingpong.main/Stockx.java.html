@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Stockx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">stockx</a> &gt; <a href="index.source.html" class="el_package">edu.pingpong.main</a> &gt; <span class="el_source">Stockx.java</span></div><h1>Stockx.java</h1><pre class="source lang-java linenums">package edu.pingpong.main;
 
-import edu.pingpong.domain.criteria.Bids;
-import edu.pingpong.domain.criteria.Criteria;
-import edu.pingpong.domain.item.Bid;
-import edu.pingpong.domain.item.Item;
-import edu.pingpong.domain.item.Sneaker;
+import edu.pingpong.domain.criteria.*;
+import edu.pingpong.domain.item.*;
+
+import java.util.List;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -24,7 +23,7 @@ import edu.pingpong.domain.item.Sneaker;
  */
 
 
-<span class="nc" id="L27">public class Stockx {</span>
+<span class="nc" id="L26">public class Stockx {</span>
 
     public static void main(String[] args) {
 
@@ -37,8 +36,8 @@ import edu.pingpong.domain.item.Sneaker;
          * de la zapatilla han de printarse.
          */
 
-<span class="nc" id="L40">        Item sneaker = new Sneaker(&quot;555088-105&quot;, &quot;Jordan 1 Retro High Dark Mocha&quot;);</span>
-<span class="nc" id="L41">        System.out.println(Stockx.draw(sneaker));</span>
+<span class="nc" id="L39">        Item sneaker = new Sneaker(&quot;555088-105&quot;, &quot;Jordan 1 Retro High Dark Mocha&quot;);</span>
+<span class="nc" id="L40">        System.out.println(Stockx.draw(sneaker));</span>
 
         /**
          * Crear bids
@@ -46,25 +45,25 @@ import edu.pingpong.domain.item.Sneaker;
          * en sus offers.
          */
 
-<span class="nc" id="L49">        Bid bid = new Bid(&quot;13&quot;, 550);</span>
-<span class="nc" id="L50">        sneaker.add(bid);</span>
-<span class="nc" id="L51">        sneaker.add(new Bid(&quot;6&quot;, 200));</span>
-<span class="nc" id="L52">        sneaker.add(new Bid(&quot;9.5&quot;, 479));</span>
-<span class="nc" id="L53">        sneaker.add(new Bid(&quot;13&quot;, 338));</span>
-<span class="nc" id="L54">        sneaker.add(new Bid(&quot;9.5&quot;, 480));</span>
+<span class="nc" id="L48">        Bid bid = new Bid(&quot;13&quot;, 550);</span>
+<span class="nc" id="L49">        sneaker.add(bid);</span>
+<span class="nc" id="L50">        sneaker.add(new Bid(&quot;6&quot;, 200));</span>
+<span class="nc" id="L51">        sneaker.add(new Bid(&quot;9.5&quot;, 479));</span>
+<span class="nc" id="L52">        sneaker.add(new Bid(&quot;13&quot;, 338));</span>
+<span class="nc" id="L53">        sneaker.add(new Bid(&quot;9.5&quot;, 480));</span>
 
         /**
          * Crear asks
          * y añadirlas a la zapatilla
          * en sus offers.
          */
-/*
-        Ask ask = new Ask(&quot;13&quot;, 288);
-        sneaker.add(ask);
-        sneaker.add(new Ask(&quot;6&quot;, 600));
-        sneaker.add(new Ask(&quot;9.5&quot;, 333));
-        sneaker.add(new Ask(&quot;9.5&quot;, 340));
-        sneaker.add(new Ask(&quot;13&quot;, 330));
+
+<span class="nc" id="L61">        Ask ask = new Ask(&quot;13&quot;, 288);</span>
+<span class="nc" id="L62">        sneaker.add(ask);</span>
+<span class="nc" id="L63">        sneaker.add(new Ask(&quot;6&quot;, 600));</span>
+<span class="nc" id="L64">        sneaker.add(new Ask(&quot;9.5&quot;, 333));</span>
+<span class="nc" id="L65">        sneaker.add(new Ask(&quot;9.5&quot;, 340));</span>
+<span class="nc" id="L66">        sneaker.add(new Ask(&quot;13&quot;, 330));</span>
 
         /**
          * Crear el filtro &quot;Bids&quot; que filtra
@@ -72,19 +71,19 @@ import edu.pingpong.domain.item.Sneaker;
          * offers de la zapatilla.
          */
 
-<span class="nc" id="L75">        Criteria bids = new Bids();</span>
-<span class="nc" id="L76">        System.out.println(&quot;\n\t\t All BIDS&quot;);</span>
-<span class="nc" id="L77">        bids.checkCriteria(sneaker).forEach(System.out::print);</span>
+<span class="nc" id="L74">        Criteria bids = new Bids();</span>
+<span class="nc" id="L75">        System.out.println(&quot;\n\t\t All BIDS&quot;);</span>
+<span class="nc" id="L76">        bids.checkCriteria(sneaker).forEach(System.out::print);</span>
 
         /**
          * Crea el filtro &quot;Asks&quot; que filtra
          * solo las asks de entre las
          * offers de la zapatilla.
          */
-/*
-        Criteria asks = new Asks();
-        System.out.println(&quot;\n\t\t All ASKS&quot;);
-        asks.checkCriteria(sneaker).forEach(System.out::print);
+
+<span class="nc" id="L84">        Criteria asks = new Asks();</span>
+<span class="nc" id="L85">        System.out.println(&quot;\n\t\t All ASKS&quot;);</span>
+<span class="nc" id="L86">        asks.checkCriteria(sneaker).forEach(System.out::print);</span>
 
         /**
          * Muestra la bid maxima
@@ -98,11 +97,11 @@ import edu.pingpong.domain.item.Sneaker;
          * Guarda esta bid maxima en la
          * propiedad bid de sneaker.
          */
-/*
-        Criteria maxBid = new MaxBid();
-        List&lt;Offer&gt; maximum = maxBid.checkCriteria(sneaker);
-        sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
-        System.out.println(Stockx.draw(sneaker));
+
+<span class="nc" id="L101">        Criteria maxBid = new MaxBid();</span>
+<span class="nc" id="L102">        List&lt;Offer&gt; maximum = maxBid.checkCriteria(sneaker);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());</span>
+<span class="nc" id="L104">        System.out.println(Stockx.draw(sneaker));</span>
 
         /**
          * Muestra la ask minima
@@ -116,11 +115,11 @@ import edu.pingpong.domain.item.Sneaker;
          * Guarda esta ask minima en la propiedad
          * ask de sneaker.
          */
-/*
-        Criteria minAsk = new MinAsk();
-        List&lt;Offer&gt; minimum = minAsk.checkCriteria(sneaker);
-        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
-        System.out.println(Stockx.draw(sneaker));
+
+<span class="nc" id="L119">        Criteria minAsk = new MinAsk();</span>
+<span class="nc" id="L120">        List&lt;Offer&gt; minimum = minAsk.checkCriteria(sneaker);</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());</span>
+<span class="nc" id="L122">        System.out.println(Stockx.draw(sneaker));</span>
 
         /**
          * Añade ventas (sales) de
@@ -129,23 +128,23 @@ import edu.pingpong.domain.item.Sneaker;
          * en la que se producen, de mas antigua
          * a mas reciente.
          */
-/*
-        Sale sale = new Sale(&quot;6&quot;, 356);
-        sneaker.add(sale);
-        sneaker.add(new Sale(&quot;9.5&quot;, 352));
-        sneaker.add(new Sale(&quot;9.5&quot;, 404));
-        sneaker.add(new Sale(&quot;13&quot;, 360));
-        sneaker.add(new Sale(&quot;13&quot;, 372));
+
+<span class="nc" id="L132">        Sale sale = new Sale(&quot;6&quot;, 356);</span>
+<span class="nc" id="L133">        sneaker.add(sale);</span>
+<span class="nc" id="L134">        sneaker.add(new Sale(&quot;9.5&quot;, 352));</span>
+<span class="nc" id="L135">        sneaker.add(new Sale(&quot;9.5&quot;, 404));</span>
+<span class="nc" id="L136">        sneaker.add(new Sale(&quot;13&quot;, 360));</span>
+<span class="nc" id="L137">        sneaker.add(new Sale(&quot;13&quot;, 372));</span>
 
         /**
          * Crear el filtro &quot;Sales&quot; que filtra
          * solo las ventas /sales de entre las
          * offers de la zapatilla.
          */
-/*
-        Criteria sales = new Sales();
-        System.out.println(&quot;\n\t\t All SALES&quot;);
-        sales.checkCriteria(sneaker).forEach(System.out::print);
+
+<span class="nc" id="L145">        Criteria sales = new Sales();</span>
+<span class="nc" id="L146">        System.out.println(&quot;\n\t\t All SALES&quot;);</span>
+<span class="nc" id="L147">        sales.checkCriteria(sneaker).forEach(System.out::print);</span>
 
         /**
          * Crea un filtro que devuelva
@@ -153,12 +152,12 @@ import edu.pingpong.domain.item.Sneaker;
          * es la ultima en ser incluida
          * en sneaker).
          */
-/*
-        Criteria lastSale = new LastSale();
 
-        List&lt;Offer&gt; actualSale = lastSale.checkCriteria(sneaker);
-        sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());
-        System.out.println(Stockx.draw(sneaker));
+<span class="nc" id="L156">        Criteria lastSale = new LastSale();</span>
+
+<span class="nc" id="L158">        List&lt;Offer&gt; actualSale = lastSale.checkCriteria(sneaker);</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">        sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());</span>
+<span class="nc" id="L160">        System.out.println(Stockx.draw(sneaker));</span>
 
         /**
          * Mostrar info de la zapatilla
@@ -228,17 +227,17 @@ import edu.pingpong.domain.item.Sneaker;
          * - maxima bid
          */
 
-<span class="nc" id="L231">        System.out.println(Stockx.draw(sneaker));</span>
+<span class="nc" id="L230">        System.out.println(Stockx.draw(sneaker));</span>
 
         // mostrar las listas ordenadas
 
 
-<span class="nc" id="L236">    }</span>
+<span class="nc" id="L235">    }</span>
 
     public static String draw(Item sneaker) {
-<span class="nc" id="L239">        return</span>
-<span class="nc" id="L240">                &quot;\n\n\t\t&quot; + sneaker.getAsk() + &quot; Buy\t&quot;</span>
-<span class="nc" id="L241">                        + sneaker.getBid() + &quot; Sell \n&quot; +</span>
+<span class="nc" id="L238">        return</span>
+<span class="nc" id="L239">                &quot;\n\n\t\t&quot; + sneaker.getAsk() + &quot; Buy\t&quot;</span>
+<span class="nc" id="L240">                        + sneaker.getBid() + &quot; Sell \n&quot; +</span>
 
                         &quot;\t\t&quot; + &quot; _    _&quot; + &quot;\n&quot; +
                         &quot;\t\t&quot; + &quot;(_\\__/(,_&quot; + &quot;\n&quot; +
@@ -247,8 +246,8 @@ import edu.pingpong.domain.item.Sneaker;
                         &quot;\t\t&quot; + &quot;|=====;__/___./&quot; + &quot;\n&quot; +
                         &quot;\t\t&quot; + &quot;\'-\'-\'-\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;`&quot; + &quot;\n&quot; +
 
-<span class="nc" id="L250">                        &quot;\t&quot; + sneaker.toString() + &quot;\n&quot; +</span>
-<span class="nc" id="L251">                        &quot;\t\tlast sale: &quot; + sneaker.getSale();</span>
+<span class="nc" id="L249">                        &quot;\t&quot; + sneaker.toString() + &quot;\n&quot; +</span>
+<span class="nc" id="L250">                        &quot;\t\tlast sale: &quot; + sneaker.getSale();</span>
     }
 }
 

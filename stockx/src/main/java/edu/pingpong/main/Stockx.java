@@ -152,7 +152,7 @@ public class Stockx {
          * es la ultima en ser incluida
          * en sneaker).
          */
-/*
+
         Criteria lastSale = new LastSale();
 
         List<Offer> actualSale = lastSale.checkCriteria(sneaker);

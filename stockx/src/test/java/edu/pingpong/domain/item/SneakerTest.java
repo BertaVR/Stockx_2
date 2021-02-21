@@ -30,6 +30,25 @@ public class SneakerTest {
                 '\t' + "last sale: 0", sneaker.toString());
     }
 
+    @Test
+    public void addTest2(){
+        Sneaker sneaker = new Sneaker("Hola", "Hola");
+        sneaker.add(new Bid("Tres", 3));
+        sneaker.add(new Bid("Cuatro", 2));
+        assertEquals(2, sneaker.offers().size());
+    }
+
+    public void addTest5(){
+        Sneaker sneaker = new Sneaker("Hola", "Hola");
+        sneaker.add(new Bid("Tres", 3));
+        sneaker.add(new Bid("Cuatro", 2));
+        sneaker.add(new Bid("Tres", 3));
+        sneaker.add(new Bid("Cuatro", 2));
+        sneaker.add(new Bid("Cuatro", 2));
+        assertEquals(5, sneaker.offers().size());
+    }
+
+
 
 
 }

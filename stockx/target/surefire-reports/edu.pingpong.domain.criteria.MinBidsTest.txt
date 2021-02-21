@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: edu.pingpong.domain.criteria.MinBidsTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in edu.pingpong.domain.criteria.MinBidsTest
-minTest(edu.pingpong.domain.criteria.MinBidsTest)  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.NullPointerException
-	at edu.pingpong.domain.criteria.MinBidsTest.minTest(MinBidsTest.java:49)
-

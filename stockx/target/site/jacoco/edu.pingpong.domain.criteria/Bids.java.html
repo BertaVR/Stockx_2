@@ -17,10 +17,11 @@ public class Bids implements Criteria{
 <span class="fc" id="L17">    }</span>
 
     @Override
-    public List&lt;Offer&gt; checkCriteria(Item sneaker) {
-<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        List&lt;Offer&gt; bidsList = sneaker.offers().stream().filter(o -&gt; o instanceof Bid).filter(o -&gt; o!=null).</span>
+    public List&lt;Offer&gt; checkCriteria(Item item) {
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        List&lt;Offer&gt; bidsList = item.offers().stream().filter(o -&gt; o instanceof Bid).filter(o -&gt; o!=null).</span>
 <span class="fc" id="L22">                collect(Collectors.toList());</span>
-<span class="fc" id="L23">        return bidsList;</span>
+
+<span class="fc" id="L24">        return bidsList;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

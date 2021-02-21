@@ -18,8 +18,8 @@ public class Min implements Criteria{
     }
 
     @Override
-    public List<Offer> checkCriteria(Item sneaker) {
-        Offer minOffer = sneaker.offers().stream().filter(o -> o!=null).
+    public List<Offer> checkCriteria(Item item) {
+        Offer minOffer = item.offers().stream().filter(o -> o!=null).
                 min(Comparator.comparing(o->o.value())).orElse(null);
 
         /* No sé, este último orElse me parece peligroso porque no quiero valores nulos, lo he tenido que poner porque
