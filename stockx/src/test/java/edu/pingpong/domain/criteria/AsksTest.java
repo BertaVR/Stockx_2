@@ -13,7 +13,7 @@ import static org.junit.Assert.assertFalse;
 public class AsksTest {
     Sneaker sneaker;
 
-    Asks asks = new Asks();
+    Criteria asks = new Asks();
 
 
     @Before
@@ -29,7 +29,7 @@ public class AsksTest {
         sneaker.add(new Bid("Dos", 2));
         sneaker.add(new Bid("Tres", 3));
         sneaker.add(new Bid("Cuatro", 4));
-        //Añado asks a la lista sneaker para comprobar que los asks no pasan el filtro de bids
+        //Añado asks a la lista sneaker para comprobar que los asks pasan el filtro de asks y los bids no
         Ask ask = new Ask("Ochentamil", 80);
         sneaker.add(ask);
         sneaker.add(new Ask("Cinco", 20));
@@ -43,16 +43,13 @@ public class AsksTest {
 
     public void filtroBidsTest() {
         assertFalse(asks.checkCriteria(this.sneaker).isEmpty());
+
         for (Offer offer : asks.checkCriteria(this.sneaker)) {
+
             assertNotNull(offer);
-        }
-        for (Offer offer : asks.checkCriteria(this.sneaker)) {
-            assertNotNull(offer);
-        }
-        for (Offer offer : asks.checkCriteria(this.sneaker)) {
+
             assertTrue(offer instanceof Ask);
-        }
-        for (Offer offer : asks.checkCriteria(this.sneaker)) {
+
             assertFalse(offer instanceof Bid);
         }
 

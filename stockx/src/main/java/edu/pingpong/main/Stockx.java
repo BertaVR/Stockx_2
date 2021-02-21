@@ -1,10 +1,9 @@
 package edu.pingpong.main;
 
-import edu.pingpong.domain.criteria.Bids;
-import edu.pingpong.domain.criteria.Criteria;
-import edu.pingpong.domain.item.Bid;
-import edu.pingpong.domain.item.Item;
-import edu.pingpong.domain.item.Sneaker;
+import edu.pingpong.domain.criteria.*;
+import edu.pingpong.domain.item.*;
+
+import java.util.List;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo
@@ -58,7 +57,7 @@ public class Stockx {
          * y añadirlas a la zapatilla
          * en sus offers.
          */
-/*
+
         Ask ask = new Ask("13", 288);
         sneaker.add(ask);
         sneaker.add(new Ask("6", 600));
@@ -81,7 +80,7 @@ public class Stockx {
          * solo las asks de entre las
          * offers de la zapatilla.
          */
-/*
+
         Criteria asks = new Asks();
         System.out.println("\n\t\t All ASKS");
         asks.checkCriteria(sneaker).forEach(System.out::print);
@@ -98,7 +97,7 @@ public class Stockx {
          * Guarda esta bid maxima en la
          * propiedad bid de sneaker.
          */
-/*
+
         Criteria maxBid = new MaxBid();
         List<Offer> maximum = maxBid.checkCriteria(sneaker);
         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
@@ -116,7 +115,7 @@ public class Stockx {
          * Guarda esta ask minima en la propiedad
          * ask de sneaker.
          */
-/*
+
         Criteria minAsk = new MinAsk();
         List<Offer> minimum = minAsk.checkCriteria(sneaker);
         sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
@@ -129,7 +128,7 @@ public class Stockx {
          * en la que se producen, de mas antigua
          * a mas reciente.
          */
-/*
+
         Sale sale = new Sale("6", 356);
         sneaker.add(sale);
         sneaker.add(new Sale("9.5", 352));
@@ -142,7 +141,7 @@ public class Stockx {
          * solo las ventas /sales de entre las
          * offers de la zapatilla.
          */
-/*
+
         Criteria sales = new Sales();
         System.out.println("\n\t\t All SALES");
         sales.checkCriteria(sneaker).forEach(System.out::print);

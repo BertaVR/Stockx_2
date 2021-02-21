@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Stockx.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">stockx</a> &gt; <a href="index.source.html" class="el_package">edu.pingpong.main</a> &gt; <span class="el_source">Stockx.java</span></div><h1>Stockx.java</h1><pre class="source lang-java linenums">package edu.pingpong.main;
+
+import edu.pingpong.domain.criteria.Bids;
+import edu.pingpong.domain.criteria.Criteria;
+import edu.pingpong.domain.item.Bid;
+import edu.pingpong.domain.item.Item;
+import edu.pingpong.domain.item.Sneaker;
+
+/**
+ * StockX nació en Detroit, y allí siguen haciendo
+ * las cosas a la manera tradicional,
+ * robustas y con alma, en ASCII en la CLI.
+ *
+ * Implementa las historias de usuario
+ * de las GUI proporcionadas, pero en ASCII.
+ *
+ * La lógica tras cada historia de usuario
+ * está descrita en el `main` de la clase
+ * principal `Stockx.java`.
+ *
+ * Si tienes dudas, puedes interactuar con
+ * la webapp based in London que sí que tiene (G)UI
+ * https://stockx.com/air-jordan-1-retro-high-dark-mocha
+ */
+
+
+<span class="nc" id="L27">public class Stockx {</span>
+
+    public static void main(String[] args) {
+
+        /**
+         * Crear la zapatilla
+         * y printar sus datos.
+         *
+         * Lee la funcion draw() del main
+         * para conocer que propiedades
+         * de la zapatilla han de printarse.
+         */
+
+<span class="nc" id="L40">        Item sneaker = new Sneaker(&quot;555088-105&quot;, &quot;Jordan 1 Retro High Dark Mocha&quot;);</span>
+<span class="nc" id="L41">        System.out.println(Stockx.draw(sneaker));</span>
+
+        /**
+         * Crear bids
+         * y añadirlas a la zapatilla
+         * en sus offers.
+         */
+
+<span class="nc" id="L49">        Bid bid = new Bid(&quot;13&quot;, 550);</span>
+<span class="nc" id="L50">        sneaker.add(bid);</span>
+<span class="nc" id="L51">        sneaker.add(new Bid(&quot;6&quot;, 200));</span>
+<span class="nc" id="L52">        sneaker.add(new Bid(&quot;9.5&quot;, 479));</span>
+<span class="nc" id="L53">        sneaker.add(new Bid(&quot;13&quot;, 338));</span>
+<span class="nc" id="L54">        sneaker.add(new Bid(&quot;9.5&quot;, 480));</span>
+
+        /**
+         * Crear asks
+         * y añadirlas a la zapatilla
+         * en sus offers.
+         */
+/*
+        Ask ask = new Ask(&quot;13&quot;, 288);
+        sneaker.add(ask);
+        sneaker.add(new Ask(&quot;6&quot;, 600));
+        sneaker.add(new Ask(&quot;9.5&quot;, 333));
+        sneaker.add(new Ask(&quot;9.5&quot;, 340));
+        sneaker.add(new Ask(&quot;13&quot;, 330));
+
+        /**
+         * Crear el filtro &quot;Bids&quot; que filtra
+         * solo las bids de entre las
+         * offers de la zapatilla.
+         */
+
+<span class="nc" id="L75">        Criteria bids = new Bids();</span>
+<span class="nc" id="L76">        System.out.println(&quot;\n\t\t All BIDS&quot;);</span>
+<span class="nc" id="L77">        bids.checkCriteria(sneaker).forEach(System.out::print);</span>
+
+        /**
+         * Crea el filtro &quot;Asks&quot; que filtra
+         * solo las asks de entre las
+         * offers de la zapatilla.
+         */
+/*
+        Criteria asks = new Asks();
+        System.out.println(&quot;\n\t\t All ASKS&quot;);
+        asks.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Muestra la bid maxima
+         * de la zapatilla.
+         *
+         * Crea el filtro MaxBid que filtra
+         * el maximo de las bids de la zapatilla.
+         * Devuelve la bid maxima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta bid maxima en la
+         * propiedad bid de sneaker.
+         */
+/*
+        Criteria maxBid = new MaxBid();
+        List&lt;Offer&gt; maximum = maxBid.checkCriteria(sneaker);
+        sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Muestra la ask minima
+         * de la zapatilla.
+         *
+         * Crea el filtro MinAsk que filtra
+         * el minimo de las asks de la zapatilla.
+         * Devuelve la ask minima como unico
+         * elemento de una lista de offers.
+         *
+         * Guarda esta ask minima en la propiedad
+         * ask de sneaker.
+         */
+/*
+        Criteria minAsk = new MinAsk();
+        List&lt;Offer&gt; minimum = minAsk.checkCriteria(sneaker);
+        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Añade ventas (sales) de
+         * una zapatilla a sus offers.
+         * Las ventas se añaden segun fecha
+         * en la que se producen, de mas antigua
+         * a mas reciente.
+         */
+/*
+        Sale sale = new Sale(&quot;6&quot;, 356);
+        sneaker.add(sale);
+        sneaker.add(new Sale(&quot;9.5&quot;, 352));
+        sneaker.add(new Sale(&quot;9.5&quot;, 404));
+        sneaker.add(new Sale(&quot;13&quot;, 360));
+        sneaker.add(new Sale(&quot;13&quot;, 372));
+
+        /**
+         * Crear el filtro &quot;Sales&quot; que filtra
+         * solo las ventas /sales de entre las
+         * offers de la zapatilla.
+         */
+/*
+        Criteria sales = new Sales();
+        System.out.println(&quot;\n\t\t All SALES&quot;);
+        sales.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Crea un filtro que devuelva
+         * la ULTIMA de las ventas (que
+         * es la ultima en ser incluida
+         * en sneaker).
+         */
+/*
+        Criteria lastSale = new LastSale();
+
+        List&lt;Offer&gt; actualSale = lastSale.checkCriteria(sneaker);
+        sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Mostrar info de la zapatilla
+         * en la talla 9.5
+         */
+
+        /**
+         * Muestra las sales de la talla 9.5
+         *
+         * Crea un filtro Size(talla) que devuelva las
+         * zapatillas de la talla indicada.
+         *
+         * Crea un filtro AndCriteria() que haga
+         * un AND de los filtros Size y Sales.
+         */
+/*
+        System.out.println(&quot;\n\t\t SALES 9.5 US&quot;);
+        Criteria size = new Size(&quot;9.5&quot;);
+
+        sales = new Sales();
+        Criteria andSizeSales = new AndCriteria(size, sales);
+        andSizeSales.checkCriteria(sneaker).forEach(System.out::print);
+
+        List&lt;Offer&gt; sizeSales = andSizeSales.checkCriteria(sneaker);
+        sneaker.setSale(sizeSales.isEmpty()?
+                0 :
+                sizeSales.get(sizeSales.size() -1).value());
+        System.out.println(&quot;\n\t\t LAST SALE 9.5 US: &quot; + sneaker.getSale());
+
+        /**
+         * Reutiliza el filtro AndCriteria
+         * para filtrar las bids de la talla 9.5
+         */
+/*
+        System.out.println(&quot;\n\t\t BIDS 9.5 US&quot;);
+        bids = new Bids();
+        Criteria andSizeBids = new AndCriteria(size, bids);
+        andSizeBids.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Crea un filtro Max(size, bids)
+         * que devuelva el maximo de las bids
+         * de una talla.
+         */
+/*
+        Criteria sizeMaxBid = new Max(size, bids);
+        List&lt;Offer&gt; sizeBid = sizeMaxBid.checkCriteria(sneaker);
+        sneaker.setBid(sizeBid.isEmpty()? 0 : sizeBid.get(0).value());
+        System.out.println(&quot;\n\t\t MAX BID 9.5 US: &quot; + sneaker.getBid());
+
+        /**
+         * Crea un filtro Min(size, asks)
+         * que devuelva el minimo de las asks
+         * de una talla.
+         */
+/*
+        Criteria sizeMinAsk = new Min(size, asks);
+        List&lt;Offer&gt; sizeAsk = sizeMinAsk.checkCriteria(sneaker);
+        sneaker.setAsk(sizeAsk.isEmpty()? 0 : sizeAsk.get(0).value());
+        System.out.println(&quot;\n\t\t MIN ASK 9.5 US: &quot; + sneaker.getAsk());
+
+        /**
+         * Mostrar info de la zapatilla
+         * en la talla 9.5
+         * - ultima venta
+         * - minima ask
+         * - maxima bid
+         */
+
+<span class="nc" id="L231">        System.out.println(Stockx.draw(sneaker));</span>
+
+        // mostrar las listas ordenadas
+
+
+<span class="nc" id="L236">    }</span>
+
+    public static String draw(Item sneaker) {
+<span class="nc" id="L239">        return</span>
+<span class="nc" id="L240">                &quot;\n\n\t\t&quot; + sneaker.getAsk() + &quot; Buy\t&quot;</span>
+<span class="nc" id="L241">                        + sneaker.getBid() + &quot; Sell \n&quot; +</span>
+
+                        &quot;\t\t&quot; + &quot; _    _&quot; + &quot;\n&quot; +
+                        &quot;\t\t&quot; + &quot;(_\\__/(,_&quot; + &quot;\n&quot; +
+                        &quot;\t\t&quot; + &quot;| \\ `_////-._&quot; + &quot;\n&quot; +
+                        &quot;\t\t&quot; + &quot;J_/___\&quot;=&gt; __/`\\&quot; + &quot;\n&quot; +
+                        &quot;\t\t&quot; + &quot;|=====;__/___./&quot; + &quot;\n&quot; +
+                        &quot;\t\t&quot; + &quot;\'-\'-\'-\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;\&quot;`&quot; + &quot;\n&quot; +
+
+<span class="nc" id="L250">                        &quot;\t&quot; + sneaker.toString() + &quot;\n&quot; +</span>
+<span class="nc" id="L251">                        &quot;\t\tlast sale: &quot; + sneaker.getSale();</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
