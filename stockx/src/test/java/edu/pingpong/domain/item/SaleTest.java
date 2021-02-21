@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class SaleTest {
-    Sale sale = new Sale("ZZZ", 3);
+    Offer sale = new Sale("ZZZ", 3);
 
     @Test
     public void toStringTest() {

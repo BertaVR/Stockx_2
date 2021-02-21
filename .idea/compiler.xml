@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="stockx" target="8" />
+      <module name="stockx" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Bids.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">stockx</a> &gt; <a href="index.source.html" class="el_package">edu.pingpong.domain.criteria</a> &gt; <span class="el_source">Bids.java</span></div><h1>Bids.java</h1><pre class="source lang-java linenums">package edu.pingpong.domain.criteria;
+
+import edu.pingpong.domain.item.Bid;
+import edu.pingpong.domain.item.Item;
+import edu.pingpong.domain.item.Offer;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Bids implements Criteria{
+
+<span class="fc" id="L13">    private List&lt;Offer&gt; bidsList = new ArrayList&lt;&gt;();</span>
+
+<span class="fc" id="L15">    public Bids(){</span>
+
+<span class="fc" id="L17">    }</span>
+
+    @Override
+    public List&lt;Offer&gt; checkCriteria(Item item) {
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        List&lt;Offer&gt; bidsList = item.offers().stream().filter(o -&gt; o instanceof Bid).filter(o -&gt; o!=null).</span>
+<span class="fc" id="L22">                collect(Collectors.toList());</span>
+
+<span class="fc" id="L24">        return bidsList;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

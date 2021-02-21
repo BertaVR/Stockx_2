@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class BidTest {
 
-    Bid bid = new Bid("Hola", 20);
+    Offer bid = new Bid("Hola", 20);
 
     @Test
     public void toStringTest() {

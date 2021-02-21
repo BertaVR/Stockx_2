@@ -8,9 +8,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BidsTest {
-    Sneaker sneaker;
 
-    Bids bids = new Bids();
+    Item sneaker;
+
+    Criteria bids = new Bids();
 
 
 
@@ -42,12 +43,11 @@ public class BidsTest {
     public void filtroBidsTest(){
         assertFalse(bids.checkCriteria(this.sneaker).isEmpty());
         for (Offer offer : bids.checkCriteria(this.sneaker)){
+
             assertNotNull(offer);
-        }
-        for (Offer offer : bids.checkCriteria(this.sneaker)){
+
             assertTrue(offer instanceof Bid);
-        }
-        for (Offer offer : bids.checkCriteria(this.sneaker)){
+
             assertFalse(offer instanceof Ask);
         }
 

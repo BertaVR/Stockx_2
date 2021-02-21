@@ -6,7 +6,8 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 public class AskTest {
-    Ask ask = new Ask("Pato", 155);
+
+    Offer ask = new Ask("Pato", 155);
 
     @Test
     public void toStringTest() {
