@@ -14,9 +14,9 @@ public class Sales implements Criteria{
     }
 
     @Override
-    public List<Offer> checkCriteria(Item sneaker) {
+    public List<Offer> checkCriteria(Item item) {
         List<Offer> salesList = new ArrayList<>();
-        salesList = sneaker.offers().stream().filter(o -> o instanceof Sale).filter(o -> o != null).
+        salesList = item.offers().stream().filter(o -> o instanceof Sale).filter(o -> o != null).
                 collect(Collectors.toList());
         return salesList;
     }

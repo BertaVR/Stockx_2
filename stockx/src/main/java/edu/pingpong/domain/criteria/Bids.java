@@ -17,8 +17,8 @@ public class Bids implements Criteria{
     }
 
     @Override
-    public List<Offer> checkCriteria(Item sneaker) {
-        List<Offer> bidsList = sneaker.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).
+    public List<Offer> checkCriteria(Item item) {
+        List<Offer> bidsList = item.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).
                 collect(Collectors.toList());
         return bidsList;
     }
