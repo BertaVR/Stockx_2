@@ -32,7 +32,7 @@ public class MinAskTest {
         sneaker.add(new Sale("Cuatro", 400));
         sneaker.add(new Sale("Cuatro", 700));
         sneaker.add(new Bid("Cuatro", 0));
-        sneaker.add(new Ask("Cuatro", 2));
+        sneaker.add(new Ask("Mariposa", 2));
         sneaker.add(new Bid("Tres", 56));
         sneaker.add(new Bid("Tres", 57));
         sneaker.add(new Bid("Tres", 59));
@@ -43,12 +43,18 @@ public class MinAskTest {
     }
 
     @Test // TENGO QUE TESTEAR QUE NO ENTREN VALORES NULOS, LA VERDAD ES QUE AHORA MISMO NO SÉ CÓMO HACERLO
-    public void minTest() {
+    public void minAskTest() {
+        //esto aplica a este caso porque solo hay un ask con valor 2
+        assertEquals(1, minAsk.checkCriteria(this.sneaker).size());
         for (Offer offer : minAsk.checkCriteria(this.sneaker)) {
             assertNotNull(offer);
             assertTrue(offer instanceof Ask);
             assertEquals(2, offer.value());
+            assertEquals("Mariposa", offer.size());
+
 
         }
     }
+
+
 }

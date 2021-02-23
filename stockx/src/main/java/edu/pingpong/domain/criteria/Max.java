@@ -9,17 +9,16 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+public class Max implements Criteria{
 
-public class Min implements Criteria{
-
-    private List<Offer> min = new ArrayList<>();
+    private List<Offer> max = new ArrayList<>();
 
     Criteria criteria;
     Criteria otherCriteria;
 
 
 
-    public Min(Criteria criteria, Criteria otherCriteria){
+    public Max(Criteria criteria, Criteria otherCriteria){
         this.criteria = criteria;
         this.otherCriteria = otherCriteria;
     }
@@ -34,14 +33,13 @@ public class Min implements Criteria{
         List<Offer> andCriteriaList = andCriteria.checkCriteria(item);
 
         Offer minOffer = andCriteriaList.stream().
-                min(Comparator.comparing(o->o.value())).orElse(null);
+                max(Comparator.comparing(o->o.value())).orElse(null);
 
-        min.add(minOffer);
+        max.add(minOffer);
 
-        min = min.stream().filter(Objects::nonNull)
+        max = max.stream().filter(Objects::nonNull)
                 .collect(Collectors.toList());
 
-        return min;
+        return max;
     }
-
 }

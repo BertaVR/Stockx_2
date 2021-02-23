@@ -6,6 +6,7 @@ import edu.pingpong.domain.item.Offer;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MinAsk implements Criteria{
     private List<Offer> minAsk = new ArrayList<>();
@@ -21,12 +22,12 @@ public class MinAsk implements Criteria{
         Offer minAskOffer = asks.checkCriteria(item).stream().filter(o -> o!=null).
                 min(Comparator.comparing(o->o.value())).orElse(null);
 
-        /* No sé, este último orElse me parece peligroso porque no quiero valores nulos, lo he tenido que poner porque
-         ** si no los objetos eran de clase Optional y no es lo que pide mi lista, creo que tendré que refactorizar.
-         ** El filtro de nulos tampoco sé qué tan útil es, probablemente lo borraré
-         */
 
         minAsk.add(minAskOffer);
+
+        minAsk = minAsk.stream().filter(o -> o!=null) //Aquí quito los nulos
+                .collect(Collectors.toList());
+
 
         return minAsk;
     }

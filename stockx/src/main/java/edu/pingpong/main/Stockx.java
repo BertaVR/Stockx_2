@@ -173,7 +173,7 @@ public class Stockx {
          * Crea un filtro AndCriteria() que haga
          * un AND de los filtros Size y Sales.
          */
-/*
+
         System.out.println("\n\t\t SALES 9.5 US");
         Criteria size = new Size("9.5");
 
@@ -191,7 +191,7 @@ public class Stockx {
          * Reutiliza el filtro AndCriteria
          * para filtrar las bids de la talla 9.5
          */
-/*
+
         System.out.println("\n\t\t BIDS 9.5 US");
         bids = new Bids();
         Criteria andSizeBids = new AndCriteria(size, bids);
@@ -202,7 +202,7 @@ public class Stockx {
          * que devuelva el maximo de las bids
          * de una talla.
          */
-/*
+
         Criteria sizeMaxBid = new Max(size, bids);
         List<Offer> sizeBid = sizeMaxBid.checkCriteria(sneaker);
         sneaker.setBid(sizeBid.isEmpty()? 0 : sizeBid.get(0).value());
@@ -213,7 +213,7 @@ public class Stockx {
          * que devuelva el minimo de las asks
          * de una talla.
          */
-/*
+
         Criteria sizeMinAsk = new Min(size, asks);
         List<Offer> sizeAsk = sizeMinAsk.checkCriteria(sneaker);
         sneaker.setAsk(sizeAsk.isEmpty()? 0 : sizeAsk.get(0).value());
