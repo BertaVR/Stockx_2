@@ -44,6 +44,8 @@ public class MinAskTest {
 
     @Test // TENGO QUE TESTEAR QUE NO ENTREN VALORES NULOS, LA VERDAD ES QUE AHORA MISMO NO SÉ CÓMO HACERLO
     public void minAskTest() {
+        //esto aplica a este caso porque solo hay un ask con valor 2
+        assertEquals(1, minAsk.checkCriteria(this.sneaker).size());
         for (Offer offer : minAsk.checkCriteria(this.sneaker)) {
             assertNotNull(offer);
             assertTrue(offer instanceof Ask);
@@ -53,4 +55,6 @@ public class MinAskTest {
 
         }
     }
+
+
 }
