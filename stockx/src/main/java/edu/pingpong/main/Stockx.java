@@ -173,7 +173,7 @@ public class Stockx {
          * Crea un filtro AndCriteria() que haga
          * un AND de los filtros Size y Sales.
          */
-/*
+
         System.out.println("\n\t\t SALES 9.5 US");
         Criteria size = new Size("9.5");
 
@@ -191,7 +191,7 @@ public class Stockx {
          * Reutiliza el filtro AndCriteria
          * para filtrar las bids de la talla 9.5
          */
-/*
+
         System.out.println("\n\t\t BIDS 9.5 US");
         bids = new Bids();
         Criteria andSizeBids = new AndCriteria(size, bids);

@@ -3,6 +3,7 @@ edu\pingpong\domain\criteria\Bids.class
 edu\pingpong\domain\criteria\MaxBid.class
 edu\pingpong\domain\item\Ask.class
 edu\pingpong\domain\item\Bid.class
+edu\pingpong\domain\criteria\AndCriteria.class
 edu\pingpong\domain\criteria\LastSale.class
 edu\pingpong\domain\criteria\MinAsk.class
 edu\pingpong\domain\criteria\Asks.class
