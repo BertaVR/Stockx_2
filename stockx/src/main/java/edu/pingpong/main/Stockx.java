@@ -202,7 +202,7 @@ public class Stockx {
          * que devuelva el maximo de las bids
          * de una talla.
          */
-/*
+
         Criteria sizeMaxBid = new Max(size, bids);
         List<Offer> sizeBid = sizeMaxBid.checkCriteria(sneaker);
         sneaker.setBid(sizeBid.isEmpty()? 0 : sizeBid.get(0).value());
@@ -213,7 +213,7 @@ public class Stockx {
          * que devuelva el minimo de las asks
          * de una talla.
          */
-/*
+
         Criteria sizeMinAsk = new Min(size, asks);
         List<Offer> sizeAsk = sizeMinAsk.checkCriteria(sneaker);
         sneaker.setAsk(sizeAsk.isEmpty()? 0 : sizeAsk.get(0).value());

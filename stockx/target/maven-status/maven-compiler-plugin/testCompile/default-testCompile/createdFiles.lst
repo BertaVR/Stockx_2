@@ -9,5 +9,6 @@ edu\pingpong\domain\criteria\BidsTest.class
 edu\pingpong\domain\item\AskTest.class
 edu\pingpong\domain\criteria\MinAskTest.class
 edu\pingpong\domain\criteria\SizeTest.class
+edu\pingpong\domain\criteria\MaxTest.class
 edu\pingpong\domain\criteria\SalesTest.class
 edu\pingpong\domain\item\SaleTest.class

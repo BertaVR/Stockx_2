@@ -1,14 +1,16 @@
 package edu.pingpong.domain.criteria;
 
-import edu.pingpong.domain.item.*;
-import org.junit.Assert;
+import edu.pingpong.domain.item.Ask;
+import edu.pingpong.domain.item.Bid;
+import edu.pingpong.domain.item.Item;
+import edu.pingpong.domain.item.Sneaker;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class MinTest {
+public class MaxTest {
 
     Criteria criteria;
 
@@ -16,7 +18,7 @@ public class MinTest {
 
     Item sneaker = new Sneaker("Hola", "Adios");
 
-    Criteria min = new Min(criteria, otherCriteria);
+    Criteria max = new Max(criteria, otherCriteria);
 
 
 
@@ -31,7 +33,7 @@ public class MinTest {
         sneaker.add(new Bid("Uno", 1));
         sneaker.add(new Bid("Dos", 2));
         sneaker.add(new Bid("Tres", 3));
-        sneaker.add(new Bid("Cuatro", 4));
+        sneaker.add(new Bid("Cuatro", 66));
         //Añado asks a la lista sneaker para comprobar que los asks no pasan el filtro de bids
         Ask ask = new Ask("Ochentamil", 80);
         sneaker.add(ask);
@@ -48,13 +50,13 @@ public class MinTest {
 
     @Test
 
-    public void minDifferentOffersTest() {
+    public void maxDifferentOffersTest() {
 
-        Criteria bids = new Bids();
+        Criteria asks = new Asks();
         Criteria sales = new Sales();
-        Criteria min = new Min(bids, sales);
+        Criteria max = new Max(asks, sales);
 
-        assertTrue(min.checkCriteria(this.sneaker).isEmpty());
+        assertTrue(max.checkCriteria(this.sneaker).isEmpty());
     }
 
     @Test
@@ -62,39 +64,27 @@ public class MinTest {
     public void minIncompatibleTest() {
 
         Criteria sales = new Sales();
-        Criteria minAsk = new MinAsk();
-        Criteria min = new Min(minAsk, sales);
+        Criteria maxBid = new MaxBid();
+        Criteria max = new Max(maxBid, sales);
 
-        assertEquals(0,min.checkCriteria(this.sneaker).size());
+        assertEquals(0,max.checkCriteria(this.sneaker).size());
     }
 
-/*    @Test
- *       //me pasa lo mismo que en andcriteria, me devuelve minAsk devuelve 2 y checkcriteria 1
- *   public void minSameOfferTest() {
- *
- *      Criteria asks = new Asks();
- *       Criteria minAsk = new MinAsk();
- *       Criteria min = new Min(minAsk, asks);
- *
- *      assertEquals(minAsk.checkCriteria(this.sneaker), min.checkCriteria(this.sneaker));
- *
- *
-*
-    }*/
+
 
     @Test
-    public void minSameOfferTest() {
+    public void maxSameOfferTest() {
 
-        Criteria sales = new Asks();
-        Criteria minAsk = new MinAsk();
-        Criteria min = new Min(minAsk, sales);
+        Criteria bids = new Bids();
+        Criteria maxBid = new MaxBid();
+        Criteria max = new Max(maxBid, bids);
 
-        assertEquals(20, min.checkCriteria(this.sneaker).get(0).value());
+        assertEquals(66, max.checkCriteria(this.sneaker).get(0).value());
     }
 
     @Test
 
-    public void minCompatibleTest() {
+    public void maxCompatibleTest() {
 
         sneaker.add(new Ask("4", 20));
         sneaker.add(new Ask("4", 30));
@@ -105,9 +95,9 @@ public class MinTest {
 
         Criteria asks = new Asks();
         Criteria size = new Size("4");
-        Criteria min = new Min(asks, size);
+        Criteria min = new Max(asks, size);
 
-        assertEquals(20, min.checkCriteria(this.sneaker).get(0).value());
+        assertEquals(50, min.checkCriteria(this.sneaker).get(0).value());
 
 
     }

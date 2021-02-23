@@ -11,6 +11,7 @@ edu\pingpong\main\Stockx.class
 edu\pingpong\domain\criteria\Size.class
 edu\pingpong\domain\item\Offer.class
 edu\pingpong\domain\criteria\Min.class
+edu\pingpong\domain\criteria\Max.class
 edu\pingpong\domain\item\Sale.class
 edu\pingpong\domain\item\Sneaker.class
 edu\pingpong\domain\criteria\Sales.class

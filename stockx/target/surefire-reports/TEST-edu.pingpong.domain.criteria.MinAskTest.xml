@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.pingpong.domain.criteria.MinAskTest" time="0.012" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.pingpong.domain.criteria.MinAskTest" time="0.003" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.10\bin"/>
-    <property name="sun.java.command" value="C:\Users\Vika\AppData\Local\Temp\surefire1315955189087625329\surefirebooter5885467543744887369.jar C:\Users\Vika\AppData\Local\Temp\surefire1315955189087625329 2021-02-23T11-09-34_848-jvmRun1 surefire2287547129817418506tmp surefire_013654609402883462051tmp"/>
+    <property name="sun.java.command" value="C:\Users\Vika\AppData\Local\Temp\surefire15708563225018749414\surefirebooter8375995823929901480.jar C:\Users\Vika\AppData\Local\Temp\surefire15708563225018749414 2021-02-23T12-52-00_904-jvmRun1 surefire11077975937947846514tmp surefire_012273041425791861880tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Vika\Desktop\Stockx_2\stockx\target\test-classes;C:\Users\Vika\Desktop\Stockx_2\stockx\target\classes;C:\Users\Vika\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Vika\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Vika\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.4.30\kotlin-stdlib-jdk8-1.4.30.jar;C:\Users\Vika\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.30\kotlin-stdlib-1.4.30.jar;C:\Users\Vika\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.30\kotlin-stdlib-common-1.4.30.jar;C:\Users\Vika\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Vika\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.4.30\kotlin-stdlib-jdk7-1.4.30.jar;C:\Users\Vika\.m2\repository\org\jetbrains\kotlin\kotlin-test\1.4.30\kotlin-test-1.4.30.jar;C:\Users\Vika\.m2\repository\org\jetbrains\kotlin\kotlin-test-common\1.4.30\kotlin-test-common-1.4.30.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Vika\AppData\Local\Temp\surefire1315955189087625329\surefirebooter5885467543744887369.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Vika\AppData\Local\Temp\surefire15708563225018749414\surefirebooter8375995823929901480.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.10+8-LTS-162"/>
