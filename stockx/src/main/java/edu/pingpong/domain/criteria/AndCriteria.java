@@ -3,7 +3,6 @@ package edu.pingpong.domain.criteria;
 import edu.pingpong.domain.item.Item;
 import edu.pingpong.domain.item.Offer;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
