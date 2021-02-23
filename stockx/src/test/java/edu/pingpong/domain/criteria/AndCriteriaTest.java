@@ -5,17 +5,23 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class AndCriteriaTest {
-    Item sneaker;
+
+    Criteria criteria;
+
+    Criteria otherCriteria;
+
+    Criteria andCriteria = new AndCriteria(criteria, otherCriteria);
+
+    Item sneaker = new Sneaker("Hola", "Adios");
 
 
     @Before
 
     public void setUpSneakers() {
         //Añado ofertas bid a sneaker
-        this.sneaker = new Sneaker("Hola", "Adios");
 
         Bid bid = new Bid("Cero", 50);
 
@@ -40,7 +46,7 @@ public class AndCriteriaTest {
 
         Criteria bids = new Bids();
         Criteria sales = new Sales();
-        AndCriteria andCritera = new AndCriteria(bids, sales);
+        Criteria andCritera = new AndCriteria(bids, sales);
 
         assertTrue(andCritera.checkCriteria(this.sneaker).isEmpty());
     }
@@ -51,7 +57,7 @@ public class AndCriteriaTest {
 
         Criteria sales = new Sales();
         Criteria minAsk = new MinAsk();
-        AndCriteria andCritera = new AndCriteria(minAsk, sales);
+        Criteria andCritera = new AndCriteria(minAsk, sales);
 
         assertTrue(andCritera.checkCriteria(this.sneaker).isEmpty());
     }
@@ -62,7 +68,7 @@ public class AndCriteriaTest {
 
         Criteria asks = new Asks();
         Criteria minAsk = new MinAsk();
-        AndCriteria andCritera = new AndCriteria(asks, minAsk);
+        Criteria andCritera = new AndCriteria(asks, minAsk);
 
         assertEquals(minAsk.checkCriteria(this.sneaker), andCritera.checkCriteria(this.sneaker));
 
@@ -81,7 +87,7 @@ public class AndCriteriaTest {
 
         Criteria asks = new Asks();
         Criteria size = new Size("4");
-        AndCriteria andCritera = new AndCriteria(asks, asks);
+        Criteria andCritera = new AndCriteria(asks, size);
 
         assertEquals(5, andCritera.checkCriteria(this.sneaker).size());
 
